@@ -1,0 +1,54 @@
+.container {
+  width: 800px;
+  min-width: 800px;
+  height: 700px;
+  background-color: rgb(238, 228, 228);
+  h1 {
+    width: 100%;
+    text-align: center;
+  }
+  .cuerpo {
+    font-size: 14px;
+    width: 50%;
+    display: flex;
+    line-height : 0;
+    .descripcion {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      margin-left: 10px;
+      .titulo {
+        width: 50px;
+        margin-top: 5px;
+      }
+      .campo {
+        display: flex;
+        flex-direction: row;
+        width: 400px;
+        .items {
+          display: flex;
+          flex-direction: column;
+          margin-top: 5px;
+          margin-left: 10px;
+        }
+      }
+      .sinopsys {
+        line-height : 1;
+      }
+      .boton {
+        width: 60px;
+        height: 40px;
+      }
+      .boton:hover {
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+      }
+
+    }
+
+  }
+  .imagenes {
+    width: 400px;
+    height: 550px;
+  }
+}

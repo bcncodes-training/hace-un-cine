@@ -1,0 +1,96 @@
+<div class="container">
+  <h1>CINEMA</h1>
+  <ng-container *ngIf='identificador != 0; else noSalaWarning'>
+    <h3>ROOM {{ identificador }}  {{ salaSeleccionada.title }}</h3>
+    <div class="cuerpo">
+
+      <img class="imagenes" src={{salaSeleccionada.poster}}>
+
+      <div class="descripcion">
+
+        <div class="campo">
+          <p class="titulo">Genres:</p>
+          <div class="items">
+            <ng-container *ngFor='let genero of salaSeleccionada.genres'>
+              <p>{{genero}}</p>
+            </ng-container>
+          </div>
+        </div>
+
+        <div class="campo">
+          <p class="titulo">Year:</p>
+          <div class="items">
+            <p>{{ salaSeleccionada.year }}</p>
+          </div>
+        </div>
+
+        <div class="campo">
+          <p class="titulo">Director:</p>
+          <div class="items">
+            <p>{{ salaSeleccionada.director }}</p>
+          </div>
+        </div>
+
+        <div class="campo">
+          <p class="titulo">Actors:</p>
+          <div class="items">
+            <ng-container *ngFor='let actor of salaSeleccionada.actors'>
+              <p>{{actor}}</p>
+            </ng-container>
+          </div>
+        </div>
+
+        <div class="campo">
+          <p class="titulo">Schedule:</p>
+          <div class="items">
+            <ng-container *ngFor='let hour of salaSeleccionada.hours'>
+              <p>{{hour}}</p>
+            </ng-container>
+          </div>
+        </div>
+
+        <div class="sinopsys">
+          <p >Sinopsys</p>
+          <p>{{ salaSeleccionada.synopsis }}</p>
+        </div>
+
+        <button class="boton" routerLink='../../home'>Home</button>
+
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #noSalaWarning>
+    <h1>La sala solicitada no existe</h1>
+  </ng-template>
+</div>
+
+  <!--
+  {
+    id: 1,
+    title: 'The Shawshank Redemption',
+    poster: 'https://i.imgur.com/SuW2ZlC.jpg',
+    synopsis: 'In 1947, Andy Dufresne (Tim Robbins), a banker in Maine, is convicted of murdering his wife and her lover, a golf pro. Since the state of Maine has no death...',
+    genres: [
+      'Crime', 'Drama'
+    ],
+    year: 1994,
+    director: 'Frank Darabont',
+    actors: [
+      'Tim Robbins',
+      'Morgan Freeman',
+      'Bob Gunton',
+      'William Sadler',
+      'Clancy Brown',
+      'Gil Bellows'
+    ],
+    hours: [
+      'Monday 15:30, 19:30, 22:30',
+      'Wednesday 15:30, 19:30, 22:30',
+      'Friday 15:30, 19:30, 22:30',
+      'Saturday 15:45, 19:45, 22:45',
+      'Sunday 15:45, 19:45, 22:45'
+    ],
+    room: 'Sala1'
+  }
+  -->
